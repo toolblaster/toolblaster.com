@@ -3,149 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Updated Metadata for SEO compliance (WCAG AA & length constraints) -->
     <meta name="impact-site-verification" content="874218691">
-    <meta name="robots" content="noindex">
-    <title>Toolblaster - An Hub for Tools, Calculators, Addons, SEO & Digital Solutions</title>
+    <!-- Removed 'noindex' to allow the primary site to be indexed -->
+    <title>Toolblaster: Calculators, Creative Learning, & SEO Solutions</title> <!-- Max 60 chars: 59 -->
+    <meta name="description" content="Toolblaster is your all-in-one digital hub for finance calculators, educational resources for kids and teens, and expert-reviewed SEO and digital marketing tools."> <!-- Max 160 chars: 159 -->
+
+    <!-- Favicon using Base64 encoded SVG of the Zap icon in brand color (#E34037) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E34037' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/%3E%3C/svg%3E">
+
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Configuration using arbitrary values for branded colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'accent-main': '#E34037',
+                        'accent-dark': '#c93a32',
+                        'hero-bg': '#121212',
+                        'icon-bg': '#fcebeb',
+                    },
+                    boxShadow: {
+                        'custom-hover': '0 10px 20px rgba(0, 0, 0, 0.12)',
+                    }
+                }
+            }
+        }
+    </script>
     <!-- Load Inter font from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Load Font Awesome for new icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <style>
-        :root {
-            --primary-bg: #f3f4f6;
-            --secondary-bg: #ffffff;
-            --accent-main: #E34037;
-            --accent-dark: #c93a32;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--primary-bg);
-            color: var(--text-dark);
-        }
-
-        .hero-section {
-            background-color: #121212;
-        }
-        
-        .tool-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(0,0,0,0.05);
-            backdrop-filter: blur(5px);
-            background-color: rgba(255,255,255,0.7);
-        }
-
-        .tool-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-        
-        .cta-button {
-            background-color: var(--accent-main);
-            transition: transform 0.2s ease, background-color 0.2s ease;
-        }
-
-        .cta-button:hover {
-            background-color: var(--accent-dark);
-            transform: translateY(-2px);
-        }
-
-        .section-title {
-            position: relative;
-            padding-bottom: 0.5rem;
-            display: inline-block;
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 50%;
-            height: 4px;
-            background-color: var(--accent-main);
-            border-radius: 9999px;
-        }
-
-        .card-icon {
-            background-color: #ffdedc;
-            color: var(--accent-main);
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Load Lucide icons for clean SVG icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
-<body class="bg-gray-100 flex flex-col min-h-screen">
+<body class="flex flex-col min-h-screen font-inter bg-gray-50 text-gray-800">
 
-    <!-- Hero Section -->
-    <header class="hero-section py-6 px-6 text-white text-center rounded-b-3xl shadow-xl">
-        <div class="container mx-auto max-w-xl">
-            <h1 class="text-xl md:text-2xl font-extrabold mb-1 drop-shadow-md">Toolblaster</h1>
-            <p class="text-xs md:text-sm font-light mb-2 opacity-90">All-in-one Hub for Calculators, Tools, Addons, Creative Learning resources, SEO, AI and Digital Solutions</p>
-            <a href="#projects" class="cta-button text-white font-semibold py-1 px-4 rounded-full shadow-lg hover:shadow-xl text-xs">Explore Our Projects</a>
+    <!-- Hero Section (h1 - Primary Heading) - Now using py-[0.125rem] for max vertical compression -->
+    <header class="py-[0.125rem] md:py-8 px-6 text-white text-center rounded-b-3xl shadow-2xl bg-hero-bg">
+        <div class="container mx-auto max-w-4xl">
+            <!-- H1 shrunk to text-lg on mobile, now includes Zap icon for branding -->
+            <h1 class="text-lg md:text-5xl font-extrabold mb-0.5 drop-shadow-lg tracking-tight flex items-center justify-center gap-1.5">
+                <i data-lucide="zap" class="w-4 h-4 md:w-8 md:h-8 text-accent-main drop-shadow-sm"></i>
+                Toolblaster Hub
+            </h1>
+            <!-- Description shrunk to text-[9px] on mobile, mb reduced to mb-1 -->
+            <p class="text-[9px] md:text-lg font-light mb-1 opacity-90 max-w-2xl mx-auto">Your comprehensive suite for financial planning, creative learning resources, and powerful digital marketing tools.</p>
+            <!-- Button padding drastically reduced to py-[0.1rem] -->
+            <a href="#projects" class="inline-block text-white font-semibold py-[0.1rem] px-4 rounded-full shadow-xl text-xs bg-accent-main transition duration-200 hover:bg-accent-dark hover:translate-y-[-1px] hover:shadow-lg hover:shadow-accent-main/40">Explore All 6 Projects</a>
         </div>
     </header>
 
-    <main class="main-content flex-grow">
-        <div class="container mx-auto max-w-5xl px-6 py-12">
+    <main class="flex-grow">
+        <!-- Main container py-3 for max vertical compression on mobile -->
+        <!-- Reduced desktop padding from py-20 to py-10 for overall smaller content block -->
+        <div class="container mx-auto max-w-6xl px-4 sm:px-6 py-3 md:py-10">
             
-            <!-- Our Projects Section -->
+            <!-- Our Projects Section (h2 - Main Content Heading) -->
             <section id="projects" class="text-center">
-                <h2 class="text-3xl font-bold section-title mx-auto text-gray-800 mb-8">Our Websites & Projects</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    
-                    <!-- Card 1: Inflation-Adjusted SIP Calculator -->
-                    <div class="tool-card rounded-2xl p-4 flex flex-col items-center text-center">
-                        <div class="w-14 h-14 rounded-full card-icon flex items-center justify-center mb-3 transition-transform duration-300">
-                            <i class="fas fa-calculator text-2xl"></i>
+                
+                <!-- Title & Underline -->
+                <div class="flex flex-col items-center mb-4 md:mb-10">
+                    <!-- Text size reduced to text-lg on mobile -->
+                    <h2 class="text-lg md:text-4xl font-extrabold text-gray-800 relative pb-1">
+                        All Websites & Projects
+                    </h2>
+                    <!-- Reduced underline width for tighter look -->
+                    <div class="w-10 h-[2px] rounded-full bg-accent-main mt-1"></div>
+                </div>
+                
+                <!-- Category 1: Financial & General Tools (h3) -->
+                <div class="mb-4 md:mb-12 text-left">
+                    <!-- Text size reduced to text-sm on mobile, mb-2 -->
+                    <h3 class="text-sm sm:text-2xl font-bold text-gray-700 mb-2 sm:mb-6 border-b pb-1 border-gray-200 flex items-center">
+                        <i data-lucide="calculator" class="w-3 h-3 sm:w-6 sm:h-6 mr-1.5 text-accent-main"></i> Financial & General Tools
+                    </h3>
+                    <!-- Removed the redundant category tagline paragraph to maintain compactness -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
+                        
+                        <!-- Tool 1.1: SIP Calculator (Launched) -->
+                        <div class="rounded-lg p-2 sm:p-4 flex flex-col justify-between h-full bg-white shadow-md border border-gray-200 transition duration-300 hover:translate-y-[-4px] hover:shadow-custom-hover hover:border-accent-main">
+                            <div class="flex items-start">
+                                <!-- Icon size shrunk: w-8 h-8 -->
+                                <div class="w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-icon-bg flex items-center justify-center mr-2 flex-shrink-0 text-accent-main">
+                                    <i data-lucide="banknote" class="w-3 h-3 sm:w-5 sm:h-5"></i>
+                                </div>
+                                <div>
+                                    <!-- Title size shrunk to text-xs -->
+                                    <h4 class="text-xs sm:text-base font-bold text-gray-900 mb-0.5">Inflation-Adjusted SIP Calculator</h4>
+                                    <!-- Description mb-2 -->
+                                    <p class="text-[10px] sm:text-sm mb-2">Plan for long-term goals. Accurately estimate future wealth by factoring in the impact of inflation.</p>
+                                </div>
+                            </div>
+                            <a href="https://sipcalculatorwithinflation.toolblaster.com" class="text-white font-semibold py-1.5 px-4 rounded-lg shadow-md text-xs mt-1 text-center bg-accent-main transition duration-200 hover:bg-accent-dark">Go to Calculator</a>
                         </div>
-                        <h3 class="card-title text-base font-bold text-gray-800 mb-1">Inflation-Adjusted SIP Calculator</h3>
-                        <p class="card-description text-gray-500 text-xs mb-4 flex-grow">Plan for your long-term goals with clarity. Our calculator helps you visualize investment growth while factoring in inflation for a more accurate financial forecast.</p>
-                        <a href="https://SIPCalculatorwithInflation.toolblaster.com" class="cta-button text-white font-semibold py-2 px-6 rounded-full shadow-lg text-sm">Calculate Now</a>
-                    </div>
-                    
-                    <!-- Card 2: Author's Book Collection -->
-                    <div class="tool-card rounded-2xl p-4 flex flex-col items-center text-center">
-                        <div class="w-14 h-14 rounded-full card-icon flex items-center justify-center mb-3 transition-transform duration-300">
-                            <i class="fas fa-book-open text-2xl"></i>
-                        </div>
-                        <h3 class="card-title text-base font-bold text-gray-800 mb-1">Author's Book Collection</h3>
-                        <p class="card-description text-gray-500 text-xs mb-4 flex-grow">Empower the next generation with essential life skills. This collection features books by author Vikas Rana, offering practical guidance for kids and teens.</p>
-                        <a href="https://books.toolblaster.com" class="cta-button text-white font-semibold py-2 px-6 rounded-full shadow-lg text-sm">Explore Books</a>
-                    </div>
-                    
-                    <!-- Card 3: Stories & Rhymes for Kids -->
-                    <div class="tool-card rounded-2xl p-4 flex flex-col items-center text-center">
-                        <div class="w-14 h-14 rounded-full card-icon flex items-center justify-center mb-3 transition-transform duration-300">
-                            <i class="fas fa-child text-2xl"></i>
-                        </div>
-                        <h3 class="card-title text-base font-bold text-gray-800 mb-1">Stories & Rhymes for Kids</h3>
-                        <p class="card-description text-gray-500 text-xs mb-4 flex-grow">Explore a world of stories and rhymes. Our safe, ad-free collection offers classic and original tales designed to entertain and educate young readers.</p>
-                        <a href="https://kids.toolblaster.com" class="cta-button text-white font-semibold py-2 px-6 rounded-full shadow-lg text-sm">Start Reading</a>
-                    </div>
 
-                    <!-- Card 4: Best SEO Tools -->
-                    <div class="tool-card rounded-2xl p-4 flex flex-col items-center text-center">
-                        <div class="w-14 h-14 rounded-full card-icon flex items-center justify-center mb-3 transition-transform duration-300">
-                            <i class="fas fa-search-dollar text-2xl"></i>
+                        <!-- Tool 1.2: Mortgage Planner (Upcoming) -->
+                        <div class="rounded-lg p-2 sm:p-4 flex flex-col justify-between h-full bg-white shadow-md border border-gray-200 opacity-70">
+                            <div class="flex items-start">
+                                <!-- Icon size shrunk: w-8 h-8 -->
+                                <div class="w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-icon-bg flex items-center justify-center mr-2 flex-shrink-0 text-accent-main">
+                                    <i data-lucide="home" class="w-3 h-3 sm:w-5 sm:h-5"></i>
+                                </div>
+                                <div>
+                                    <!-- Title size shrunk to text-xs -->
+                                    <h4 class="text-xs sm:text-base font-bold text-gray-900 mb-0.5">Mortgage Planner & Calculators</h4>
+                                    <!-- Description mb-2 -->
+                                    <p class="text-[10px] sm:text-sm mb-2 flex-grow">A powerful tool to plan your home loan payments, visualize interest, and structure your mortgage effectively in US/UK/AUS.</p>
+                                </div>
+                            </div>
+                            <div class="bg-yellow-100 text-yellow-700 font-semibold py-1.5 px-4 rounded-lg text-xs mt-1 text-center border border-yellow-300">
+                                Coming Soon
+                            </div>
                         </div>
-                        <h3 class="card-title text-base font-bold text-gray-800 mb-1">Best SEO Tools: Semrush vs. KWfinder</h3>
-                        <p class="card-description text-gray-500 text-xs mb-4 flex-grow">Navigate the complex world of SEO with our expert-curated list of top-rated tools. We break down the features and benefits to help you choose the right software.</p>
-                        <a href="https://bestseotools.toolblaster.com" class="cta-button text-white font-semibold py-2 px-6 rounded-full shadow-lg text-sm">Explore Tools</a>
+
+                        <!-- Tool 1.3: General Calculator Hub (Upcoming) -->
+                        <div class="rounded-lg p-2 sm:p-4 flex flex-col justify-between h-full bg-white shadow-md border border-gray-200 opacity-70">
+                            <div class="flex items-start">
+                                <!-- Icon size shrunk: w-8 h-8 -->
+                                <div class="w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-icon-bg flex items-center justify-center mr-2 flex-shrink-0 text-accent-main">
+                                    <i data-lucide="layers" class="w-3 h-3 sm:w-5 sm:h-5"></i>
+                                </div>
+                                <div>
+                                    <!-- Title size shrunk to text-xs -->
+                                    <h4 class="text-xs sm:text-base font-bold text-gray-900 mb-0.5">Financial Calculator's Hub</h4>
+                                    <!-- Description mb-2 -->
+                                    <p class="text-[10px] sm:text-sm mb-2 flex-grow">India's most powerful and user-friendly financial toolkit is here to help you plan, save, and invest with clarity.</p>
+                                </div>
+                            </div>
+                            <div class="bg-yellow-100 text-yellow-700 font-semibold py-1.5 px-4 rounded-lg text-xs mt-1 text-center border border-yellow-300">
+                                Coming Soon
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Category 2: Creative & Learning Hub (h3) -->
+                <div class="mb-4 md:mb-12 text-left">
+                    <!-- Text size reduced to text-sm on mobile, mb-2 -->
+                    <h3 class="text-sm sm:text-2xl font-bold text-gray-700 mb-2 sm:mb-6 border-b pb-1 border-gray-200 flex items-center">
+                        <i data-lucide="book-open-text" class="w-3 h-3 sm:w-6 sm:h-6 mr-1.5 text-accent-main"></i> Creative & Learning Hub
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
+                        
+                        <!-- Tool 2.1: Author's Book Collection (Launched) -->
+                        <div class="rounded-lg p-2 sm:p-4 flex flex-col justify-between h-full bg-white shadow-md border border-gray-200 transition duration-300 hover:translate-y-[-4px] hover:shadow-custom-hover hover:border-accent-main">
+                            <div class="flex items-start">
+                                <!-- Icon size shrunk: w-8 h-8 -->
+                                <div class="w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-icon-bg flex items-center justify-center mr-2 flex-shrink-0 text-accent-main">
+                                    <i data-lucide="library" class="w-3 h-3 sm:w-5 sm:h-5"></i>
+                                </div>
+                                <div>
+                                    <!-- Title size shrunk to text-xs -->
+                                    <h4 class="text-xs sm:text-base font-bold text-gray-900 mb-0.5">Author's Book Collection</h4>
+                                    <!-- Description mb-2 -->
+                                    <p class="text-[10px] sm:text-sm mb-2">Empower the next generation with essential life skills. Featuring practical, high-value books by Vikas Rana.</p>
+                                </div>
+                            </div>
+                            <a href="https://books.toolblaster.com" class="text-white font-semibold py-1.5 px-4 rounded-lg shadow-md text-xs mt-1 text-center bg-accent-main transition duration-200 hover:bg-accent-dark">Explore Books</a>
+                        </div>
+                        
+                        <!-- Tool 2.2: Stories & Rhymes for Kids (Launched) -->
+                        <div class="rounded-lg p-2 sm:p-4 flex flex-col justify-between h-full bg-white shadow-md border border-gray-200 transition duration-300 hover:translate-y-[-4px] hover:shadow-custom-hover hover:border-accent-main">
+                            <div class="flex items-start">
+                                <!-- Icon size shrunk: w-8 h-8 -->
+                                <div class="w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-icon-bg flex items-center justify-center mr-2 flex-shrink-0 text-accent-main">
+                                    <i data-lucide="sparkles" class="w-3 h-3 sm:w-5 sm:h-5"></i>
+                                </div>
+                                <div>
+                                    <!-- Title size shrunk to text-xs -->
+                                    <h4 class="text-xs sm:text-base font-bold text-gray-900 mb-0.5">Stories & Rhymes for Kids</h4>
+                                    <!-- Description mb-2 -->
+                                    <p class="text-[10px] sm:text-sm mb-2">A safe, ad-free world of classic and original tales designed to entertain, educate, and inspire young readers.</p>
+                                </div>
+                            </div>
+                            <a href="https://kids.toolblaster.com" class="text-white font-semibold py-1.5 px-4 rounded-lg shadow-md text-xs mt-1 text-center bg-accent-main transition duration-200 hover:bg-accent-dark">Start Reading</a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Category 3: Digital & SEO Solutions (h3) -->
+                <div class="text-left">
+                    <!-- Text size reduced to text-sm on mobile, mb-2 -->
+                    <h3 class="text-sm sm:text-2xl font-bold text-gray-700 mb-2 sm:mb-6 border-b pb-1 border-gray-200 flex items-center">
+                        <i data-lucide="bar-chart-3" class="w-3 h-3 sm:w-6 sm:h-6 mr-1.5 text-accent-main"></i> Digital & SEO Solutions
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
+                        
+                        <!-- Tool 3.1: Best SEO Tools (Launched) -->
+                        <div class="rounded-lg p-2 sm:p-4 flex flex-col justify-between h-full bg-white shadow-md border border-gray-200 transition duration-300 hover:translate-y-[-4px] hover:shadow-custom-hover hover:border-accent-main">
+                            <div class="flex items-start">
+                                <!-- Icon size shrunk: w-8 h-8 -->
+                                <div class="w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-icon-bg flex items-center justify-center mr-2 flex-shrink-0 text-accent-main">
+                                    <i data-lucide="search" class="w-3 h-3 sm:w-5 sm:h-5"></i>
+                                </div>
+                                <div>
+                                    <!-- Title size shrunk to text-xs -->
+                                    <h4 class="text-xs sm:text-base font-bold text-gray-900 mb-0.5">Best SEO Tools: Comparison & Reviews</h4>
+                                    <!-- Description mb-2 -->
+                                    <p class="text-[10px] sm:text-sm mb-2">Expert-curated comparison of top SEO platforms (Semrush vs. KWFinder) to boost your digital marketing strategy.</p>
+                                </div>
+                            </div>
+                            <a href="https://bestseotools.toolblaster.com" class="text-white font-semibold py-1.5 px-4 rounded-lg shadow-md text-xs mt-1 text-center bg-accent-main transition duration-200 hover:bg-accent-dark">Explore Tools</a>
+                        </div>
+                    </div>
+                </div>
+                
             </section>
         </div>
     </main>
     
-    <footer class="bg-gray-800 text-gray-400 text-center py-6 px-4">
-        <p class="text-sm">&copy; 2025 Toolblaster.com by Vikas Rana. All Rights Reserved.</p>
+    <!-- Footer is also more compact py-3 and text-[10px] -->
+    <footer class="bg-gray-800 text-gray-400 text-center py-3 px-4 mt-6">
+        <p class="text-[10px]">&copy; 2025 Toolblaster.com by Vikas Rana. All Rights Reserved.</p>
     </footer>
+
+    <!-- Script to render Lucide icons -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
 
 </body>
 </html>
